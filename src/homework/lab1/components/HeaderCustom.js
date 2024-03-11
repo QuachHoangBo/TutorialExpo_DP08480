@@ -20,7 +20,7 @@ const HeaderCustom = ({ title }) => {
 };
 
 HeaderCustom.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({

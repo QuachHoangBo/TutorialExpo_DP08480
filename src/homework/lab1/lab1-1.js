@@ -1,10 +1,17 @@
 import React from "react";
-import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import { SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
 import HeaderCustom from "./components/HeaderCustom";
 
-const App = () => {
+const Lab1a1 = () => {
   return (
     <SafeAreaView style={styles.container}>
+      <View>
+        <TouchableOpacity
+          title="Back"
+          style={styles.button}
+          onPress={() => navigation.goBack()} // Sử dụng navigation.goBack() để quay lại màn hình trước đó
+        />
+      </View>
       <HeaderCustom title="Header 1" />
       <HeaderCustom title="Header 2" />
       <HeaderCustom title="Header 3" />
@@ -23,4 +30,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default Lab1a1;

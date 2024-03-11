@@ -22,7 +22,7 @@ const travelData = {
   },
 };
 
-const Lab1a2 = () => {
+const Lab1a2 = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Lịch Trình</Text>
