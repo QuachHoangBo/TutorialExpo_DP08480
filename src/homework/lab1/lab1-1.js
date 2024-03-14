@@ -1,5 +1,11 @@
 import React from "react";
-import { SafeAreaView, StatusBar, StyleSheet, View } from "react-native";
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import HeaderCustom from "./components/HeaderCustom";
 
 const Lab1a1 = () => {

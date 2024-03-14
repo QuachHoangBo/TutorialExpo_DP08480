@@ -1,65 +1,55 @@
 import React from "react";
-import { Text, TouchableOpacity, View, StyleSheet } from "react-native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-import { useNavigation } from "@react-navigation/native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  TouchableOpacity,
+  Text,
+} from "react-native";
 
-import Lab1a1 from "./lab1/lab1-1";
-import Lab1a2 from "./lab1/lab1-2";
-
-const SlideLab = () => {
-  const navigation = useNavigation();
+const SlideLab = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("Lab1")}
-      >
-        <Text>Lab1 bài1</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate("Lab2")}
-      >
-        <Text>Lab1 bài2</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.row}>
+        <TouchableOpacity
+          style={[styles.button, { backgroundColor: "lightblue" }]}
+          onPress={() => navigation.navigate("Lab1-1")} // Chuyển đến Lab1_2
+        >
+          <Text>Lab 1-1</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, { backgroundColor: "lightblue" }]}
+          onPress={() => navigation.navigate("Lab1-2")} // Chuyển đến Lab1_2
+        >
+          <Text>Lab 1-2</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, { backgroundColor: "lightblue" }]}
+          onPress={() => navigation.navigate("Lab1-3")} // Chuyển đến Lab1_2
+        >
+          <Text>Lab 1-3</Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
-
-const Stack = createStackNavigator();
-
-function Slide() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="SlideLab" component={SlideLab} />
-        <Stack.Screen name="Lab1" component={Lab1a1} />
-        <Stack.Screen name="Lab2" component={Lab1a2} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    height: "100%",
-    width: "100%",
-    backgroundColor: "lightblue",
-    justifyContent: "center",
     alignItems: "center",
-    padding: 10,
+    justifyContent: "center",
+  },
+  row: {
+    flexDirection: "row",
   },
   button: {
-    width: "50%",
-    height: 50,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    margin: 10,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FF99CC",
-    borderRadius: 10,
-    fontSize: 20,
-    marginBottom: 10,
   },
 });
 

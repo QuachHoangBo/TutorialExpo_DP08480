@@ -1,10 +1,14 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import InputLab1_3 from "./components/InputLab1-3";
 
-const lab1a3 = () => {
+const Lab1a3 = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Lab1 bài3</Text>
+      <InputLab1_3 />
+      <InputLab1_3 />
+      <InputLab1_3 />
+      <InputLab1_3 />
     </SafeAreaView>
   );
 };
@@ -18,4 +22,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default lab1a3;
+export default Lab1a3;
