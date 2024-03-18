@@ -11,6 +11,7 @@ const SlideLab = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.row}>
+        <Text>Lab1</Text>
         <TouchableOpacity
           style={[styles.button, { backgroundColor: "lightblue" }]}
           onPress={() => navigation.navigate("Lab1-1")} // Chuyển đến Lab1_2
@@ -30,6 +31,15 @@ const SlideLab = ({ navigation }) => {
           <Text>Lab 1-3</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.row}>
+        <Text>Lab2</Text>
+        <TouchableOpacity
+          style={[styles.button, { backgroundColor: "lightblue" }]}
+          onPress={() => navigation.navigate("Lab2")} // Chuyển đến Lab2
+        >
+          <Text>Lab 2</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
@@ -42,6 +52,8 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection: "row",
+    width: "80%",
+    justifyContent: "space-between",
   },
   button: {
     width: 60,
