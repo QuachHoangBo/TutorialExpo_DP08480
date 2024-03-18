@@ -5,7 +5,6 @@ import SlideLab from "./src/Homework/SlideLab";
 import Lab1_1 from "./src/Homework/Lab1/Lab1-1"; // Import các màn hình Lab
 import Lab1_2 from "./src/Homework/Lab1/Lab1-2";
 import Lab1_3 from "./src/Homework/Lab1/Lab1-3";
-import Lab2 from "./src/Homework/Lab2/Main";
 
 const Stack = createStackNavigator();
 
@@ -17,7 +16,6 @@ const App = () => {
         <Stack.Screen name="Lab1-1" component={Lab1_1} />
         <Stack.Screen name="Lab1-2" component={Lab1_2} />
         <Stack.Screen name="Lab1-3" component={Lab1_3} />
-        <Stack.Screen name="Lab2" component={Lab2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
