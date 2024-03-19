@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import HeaderCustom from "./components/HeaderCustom";
+import HeaderCustom from "./Components/HeaderCustom";
 
 const Lab1a1 = () => {
   return (

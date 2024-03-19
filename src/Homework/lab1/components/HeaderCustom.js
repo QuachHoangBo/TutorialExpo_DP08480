@@ -9,12 +9,12 @@ const HeaderCustom = ({ title }) => {
     <View style={styles.container}>
       <TouchableOpacity onPress={PressIn}>
         <Image
-          source={require("../img/arrowleft.jpg")}
-          style={styles.imgLeft}
+          source={require("../Img/arrowleft.jpg")}
+          style={styles.ImgLeft}
         />
       </TouchableOpacity>
       <Text style={styles.title}>{title}</Text>
-      <Image source={require("../img/avatahead.jpg")} style={styles.imgRight} />
+      <Image source={require("../Img/avatahead.jpg")} style={styles.ImgRight} />
     </View>
   );
 };
@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
-  imgLeft: {
+  ImgLeft: {
     width: 20,
     height: 20,
   },
-  imgRight: {
+  ImgRight: {
     width: 40,
     height: 40,
     borderRadius: 20,

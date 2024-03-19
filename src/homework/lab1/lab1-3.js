@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import InputLab1_3 from "./components/InputLab1-3";
+import InputLab1_3 from "./Components/InputLab1-3";
 
 const Lab1a3 = () => {
   return (

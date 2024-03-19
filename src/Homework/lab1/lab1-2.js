@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, StatusBar, SafeAreaView } from "react-native";
-import TravelSchedule from "./components/TravelingSchedule";
-import Hotel from "./components/Hotel";
+import TravelSchedule from "./Components/TravelingSchedule";
+import Hotel from "./Components/Hotel";
 
 // db la2;
 // Traveling schedule
@@ -12,7 +12,7 @@ const travelData = {
     EventTime: "9:00 AM - 12:00 PM, 12/12/2024",
     Transport: "Xe Bus",
     TransportTime: "21:00 PM - 22:00 PM",
-    img: require("./img/imgbackgroundSchedule.jpg"),
+    img: require("./Img/imgbackgroundSchedule.jpg"),
   },
   hotel: {
     id: 1,
