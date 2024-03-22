@@ -1,14 +1,21 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import File1 from "./Component/File1";
 
-const App = () => {
-  <View>
-    <File1 />
-    <File1 />
-    <File1 />
-    <File1 />
-    <File1 />
-  </View>;
+const Run = () => {
+  return (
+    <View style={styles.container}>
+      <File1 />
+    </View>
+  );
 };
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+export default Run;
