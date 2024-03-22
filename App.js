@@ -6,6 +6,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 // import Lab1_2 from "./src/Homework/Lab1/Lab1-2";
 // import Lab1_3 from "./src/Homework/Lab1/Lab1-3";
 // import Lab2 from "./src/Homework/Lab2/Main";
+// import Lab3_1 from "./src/Homework/Lab3/Lab3-1";
+// import Lab3_2 from "./src/Homework/Lab3/Lab3-2";
+// import Lab3_3 from "./src/Homework/Lab3/Lab3-3";
+
+import RunAssigment from "./src/Homework/Assignment/main";
+
 import Studying from "./src/Studying/Run";
 import { Text, View } from "react-native";
 
@@ -20,9 +26,15 @@ const App = () => {
     //     <Stack.Screen name="Lab1-2" component={Lab1_2} />
     //     <Stack.Screen name="Lab1-3" component={Lab1_3} />
     //     <Stack.Screen name="Lab2" component={Lab2} />
+    //     <Stack.Screen name="Lab3-1" component={Lab3_1} />
+    //     <Stack.Screen name="Lab3-2" component={Lab3_2} />
+    //     {/* <Stack.Screen name="Lab3-1" component={Lab3_3} /> */}
     //   </Stack.Navigator>
     // </NavigationContainer>
-    <Studying />
+
+    // <Studying />
+
+    <RunAssigment />
   );
 };
 
