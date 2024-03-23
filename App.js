@@ -10,6 +10,7 @@ import Lab3_1 from "./src/Homework/Lab3/Lab3-1";
 import Lab3_2 from "./src/Homework/Lab3/Lab3-2";
 import Lab3_3 from "./src/Homework/Lab3/Lab3-3";
 import Lab4_1 from "./src/Homework/Lab4/Lab4-1";
+import Lab4_2 from "./src/Homework/Lab4/Lab4-2";
 
 import RunAssigment from "./src/Homework/Assignment/main";
 
@@ -31,6 +32,7 @@ const App = () => {
         <Stack.Screen name="Lab3-2" component={Lab3_2} />
         <Stack.Screen name="Lab3-3" component={Lab3_3} />
         <Stack.Screen name="Lab4-1" component={Lab4_1} />
+        <Stack.Screen name="Lab4-2" component={Lab4_2} />
       </Stack.Navigator>
     </NavigationContainer>
 
