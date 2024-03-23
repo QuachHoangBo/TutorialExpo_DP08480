@@ -98,6 +98,7 @@ export default function Login({ navigation }) {
         }}
         onPress={() => {
           alert("Đăng nhập");
+          navigation.navigate("HomePage");
         }}
       >
         <Text
