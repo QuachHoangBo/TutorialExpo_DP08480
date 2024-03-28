@@ -83,6 +83,15 @@ const SlideLab = ({ navigation }) => {
           <Text>Lab 4-3</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.row}>
+        <Text>Lab5</Text>
+        <TouchableOpacity
+          style={[styles.button, { backgroundColor: "lightblue" }]}
+          onPress={() => navigation.navigate("Lab5-1")}
+        >
+          <Text>Lab 5-1</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

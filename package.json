@@ -30,6 +30,7 @@
     "react-native-scrollable-tab-view": "^1.0.0",
     "react-native-web": "~0.19.6",
     "react-redux": "^9.1.0",
+    "redux-persist": "^6.0.0",
     "typescript": "^5.3.0"
   },
   "devDependencies": {
