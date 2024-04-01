@@ -1,7 +1,12 @@
 import * as React from "react"; // Import React và các thành phần từ thư viện react-native
 import { Button, Text, View } from "react-native";
 import { useSelector, useDispatch } from "react-redux"; // Import các hàm từ thư viện react-redux
-import { increment, decrement } from "./Store/Root/counterReducer"; // Import các action từ file counterReducer trong thư mục Store
+import {
+  increment,
+  decrement,
+  resetvalue,
+  squarevalue,
+} from "./Store/Root/counterReducer"; // Import các action từ file counterReducer trong thư mục Store
 
 export default function Lab5_1() {
   const NameOfLab = "Lab5_1"; // Khai báo biến NameOfLab với giá trị "Lab5_1"
@@ -10,15 +15,17 @@ export default function Lab5_1() {
 
   return (
     <View>
-      <Text>{NameOfLab}</Text>
+      <Text style={{ alignItems: "center" }}>{NameOfLab}</Text>
       {/* // Hiển thị tên của lab */}
-      <Text>{count}</Text>
+      <Text style={{ alignItems: "center" }}>{count}</Text>
       {/* // Hiển thị giá trị hiện tại của biến count */}
       <Button title="Increment" onPress={() => dispatch(increment())} />
       {/* Nút"Increment", khi nhấn sẽ gửi action increment đến store Redux */}
       <Button title="Decrement" onPress={() => dispatch(decrement())} />
       {/* // Nút
       "Decrement", khi nhấn sẽ gửi action decrement đến store Redux */}
+      <Button title="ResetValue" onPress={() => dispatch(resetvalue())} />
+      <Button title="SquareValue" onPress={() => dispatch(squarevalue())} />
     </View>
   );
 }

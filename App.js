@@ -16,7 +16,7 @@ import Lab5_1 from "./src/Homework/Lab5/Lab5-1";
 
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./src/Homework/Lab5/Store/Store";
+import { store, persistor } from "./src/Homework/Lab5/Store/RootStore";
 import RunAssigment from "./src/Homework/Assignment/main";
 
 import Studying from "./src/Studying/Run";
