@@ -13,6 +13,7 @@ import Lab4_1 from "./src/Homework/Lab4/Lab4-1";
 import Lab4_2 from "./src/Homework/Lab4/Lab4-2";
 import Lab4_3 from "./src/Homework/Lab4/Lab4-3";
 import Lab5_1 from "./src/Homework/Lab5/Lab5-1";
+import Lab5_2 from "./src/Homework/Lab5/Lab5-2";
 
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
@@ -42,6 +43,7 @@ const App = () => {
             <Stack.Screen name="Lab4-2" component={Lab4_2} />
             <Stack.Screen name="Lab4-3" component={Lab4_3} />
             <Stack.Screen name="Lab5-1" component={Lab5_1} />
+            <Stack.Screen name="Lab5-2" component={Lab5_2} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>

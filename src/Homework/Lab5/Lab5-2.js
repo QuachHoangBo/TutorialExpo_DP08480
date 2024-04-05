@@ -1,48 +1,56 @@
+// Trong file PokemonSearch.js
 import React, { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
-import { useGetPokemonByNameQuery } from "./code3"; // Đường dẫn đến file chứa pokemonApi
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  ActivityIndicator,
+  Image,
+} from "react-native";
+import { useLazyFetchPokemonByNameQuery } from "./pokemonApi"; // Giả sử bạn đã tạo hook useLazyFetchPokemonByNameQuery
 
-const Lab5_2 = () => {
+const PokemonSearch = () => {
   const [pokemonName, setPokemonName] = useState("");
-  const { data, error, isLoading } = useGetPokemonByNameQuery(pokemonName);
+  const [searchedPokemon, setSearchedPokemon] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSearch = () => {
-    // Gọi API khi người dùng nhấn nút "Xem thông tin"
-    if (pokemonName.trim() !== "") {
-      // Chỉ gọi API nếu có tên Pokémon được nhập vào
-      setPokemonName(pokemonName.trim());
+  const fetchPokemonByName = useLazyFetchPokemonByNameQuery();
+
+  const handleSearch = async () => {
+    try {
+      setLoading(true);
+      const response = await fetchPokemonByName(pokemonName);
+      setSearchedPokemon(response.data);
+      setLoading(false);
+    } catch (error) {
+      setError(error.message);
+      setLoading(false);
     }
   };
 
   return (
     <View>
-      <Text style={{ fontWeight: "bold", alignItems: "center" }}>
-        Thông tin Pokémon {pokemonName}
-      </Text>
       <TextInput
-        placeholder="Nhập tên Pokémon"
-        style={{
-          borderWidth: 1,
-          padding: 10,
-          marginVertical: 10,
-          width: 250,
-        }}
+        placeholder="Nhập tên Pokemon"
         value={pokemonName}
-        onChangeText={setPokemonName}
+        onChangeText={(text) => setPokemonName(text)}
       />
-      <Button title="Xem thông tin" onPress={handleSearch} />
-      {isLoading && <Text>Đang tải thông tin...</Text>}
-      {error && <Text>Lỗi: {error.message}</Text>}
-      {data && (
+      <Button title="Tìm kiếm" onPress={handleSearch} />
+      {loading && <ActivityIndicator size="large" color="#0000ff" />}
+      {error !== "" && <Text>{error}</Text>}
+      {searchedPokemon && (
         <View>
-          <Text>Tên Pokémon: {data.name}</Text>
-          <Text>Chiều cao: {data.height}</Text>
-          <Text>Cân nặng: {data.weight}</Text>
-          {/* Thêm các thông tin khác của Pokémon tương ứng */}
+          <Text>{searchedPokemon.name}</Text>
+          <Image
+            source={{ uri: searchedPokemon.sprites.front_default }}
+            style={{ width: 100, height: 100 }}
+          />
         </View>
       )}
     </View>
   );
 };
 
-export default Lab5_2;
+export default PokemonSearch;

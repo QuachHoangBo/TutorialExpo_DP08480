@@ -21,7 +21,7 @@ const persistConfig = {
   version: 1,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(pokemonApi.middleware),
-  whitelist: ["counter"],
+  whitelist: ["pokemon"],
 };
 
 const persistedReducer = persistReducer(persistConfig, RootReducer);
