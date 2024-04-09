@@ -14,7 +14,7 @@ Lab6:<waiting><lms>
 Lab7:<waiting><lms>
 Lab8:<waiting><lms>
 Assignment gd1:<done><lms>
-Assignment gd2:<waiting>
+Assignment gd2:<working><lms>
 Assignment Final:<waiting>
 
 cảm ơn vì đã xem!
