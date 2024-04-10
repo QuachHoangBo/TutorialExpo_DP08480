@@ -43,7 +43,7 @@ const App = () => {
             <Stack.Screen name="Lab4-2" component={Lab4_2} />
             <Stack.Screen name="Lab4-3" component={Lab4_3} />
             <Stack.Screen name="Lab5-1" component={Lab5_1} />
-            <Stack.Screen name="Lab5-2" component={Lab5_2} />
+            {/* <Stack.Screen name="Lab5-2" component={Lab5_2} /> */}
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>
