@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import { StyleSheet } from "react-native";
-import Input from "../Components/Input";
+import Input from "./Components/Input";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login({ navigation }) {
