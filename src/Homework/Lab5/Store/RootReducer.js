@@ -4,10 +4,6 @@ import pokemonReducer from "./Root/PokemonSlice";
 
 const RootReducer = combineReducers({
   counter: counterReducer,
-<<<<<<< HEAD
-  pokemon: pokemonReducer,
-=======
->>>>>>> parent of 7615c74 (working)
 });
 
 export default RootReducer;
