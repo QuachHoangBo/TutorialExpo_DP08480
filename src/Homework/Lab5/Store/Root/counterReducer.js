@@ -26,24 +26,10 @@ export const counterSlice = createSlice({
       // Reducer cho action incrementByAmount
       state.value += action.payload; // Tăng giá trị của state.value thêm một lượng được chỉ định bởi action.payload
     },
-    resetvalue: (state) => {
-      // rest biến về không
-      state.value = 0;
-    },
-    squarevalue: (state) => {
-      //bình phương biến đếm
-      state.value = state.value * state.value;
-    },
   },
 });
 
 // Action creators được tạo ra cho mỗi reducer function
-export const {
-  increment,
-  decrement,
-  incrementByAmount,
-  resetvalue,
-  squarevalue,
-} = counterSlice.actions; // Tạo ra các action creators từ các reducer đã được định nghĩa
+export const { increment, decrement, incrementByAmount } = counterSlice.actions; // Tạo ra các action creators từ các reducer đã được định nghĩa
 
 export default counterSlice.reducer; // Xuất reducer của slice để sử dụng trong Redux store
