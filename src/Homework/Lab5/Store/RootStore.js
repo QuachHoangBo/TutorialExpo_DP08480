@@ -12,12 +12,16 @@ import {
 } from "redux-persist";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import RootReducer from "./RootReducer";
+// import logger from "redux-logger";
+// import thunk from "redux-thunk";
 
 const persistConfig = {
   key: "root",
   storage: AsyncStorage,
   version: 1,
-  whitelist: ["counter"],
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware().concat(pokemonApi.middleware),
+  // whitelist: ["pokemon"],
 };
 
 const persistedReducer = persistReducer(persistConfig, RootReducer);
