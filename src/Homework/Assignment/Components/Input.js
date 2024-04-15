@@ -8,7 +8,9 @@ const Input = (Prop) => {
     <View>
       <TextInput
         style={styles.input}
-        placeholder={Prop.placeholder}
+        placeholder="Username"
+        onChangeText={(text) => setUsername(text)}
+        value={username}
         underlineColorAndroid="transparent"
         selectionColor="#818CF8"
       />

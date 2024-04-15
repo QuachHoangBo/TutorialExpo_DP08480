@@ -27,30 +27,30 @@ const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <Provider store={store}>
-      {/* <PersistGate loading={null} persistor={persistor}> */}
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="SlideLab" component={SlideLab} />
-          <Stack.Screen name="Lab1-1" component={Lab1_1} />
-          <Stack.Screen name="Lab1-2" component={Lab1_2} />
-          <Stack.Screen name="Lab1-3" component={Lab1_3} />
-          <Stack.Screen name="Lab2" component={Lab2} />
-          <Stack.Screen name="Lab3-1" component={Lab3_1} />
-          <Stack.Screen name="Lab3-2" component={Lab3_2} />
-          <Stack.Screen name="Lab3-3" component={Lab3_3} />
-          <Stack.Screen name="Lab4-1" component={Lab4_1} />
-          <Stack.Screen name="Lab4-2" component={Lab4_2} />
-          <Stack.Screen name="Lab4-3" component={Lab4_3} />
-          <Stack.Screen name="Lab5-1" component={Lab5_1} />
-          {/* <Stack.Screen name="Lab5-2" component={Lab5_2} /> */}
-        </Stack.Navigator>
-      </NavigationContainer>
-      {/* </PersistGate> */}
-    </Provider>
+    // <Provider store={store}>
+    //   {/* <PersistGate loading={null} persistor={persistor}> */}
+    //   <NavigationContainer>
+    //     <Stack.Navigator>
+    //       <Stack.Screen name="SlideLab" component={SlideLab} />
+    //       <Stack.Screen name="Lab1-1" component={Lab1_1} />
+    //       <Stack.Screen name="Lab1-2" component={Lab1_2} />
+    //       <Stack.Screen name="Lab1-3" component={Lab1_3} />
+    //       <Stack.Screen name="Lab2" component={Lab2} />
+    //       <Stack.Screen name="Lab3-1" component={Lab3_1} />
+    //       <Stack.Screen name="Lab3-2" component={Lab3_2} />
+    //       <Stack.Screen name="Lab3-3" component={Lab3_3} />
+    //       <Stack.Screen name="Lab4-1" component={Lab4_1} />
+    //       <Stack.Screen name="Lab4-2" component={Lab4_2} />
+    //       <Stack.Screen name="Lab4-3" component={Lab4_3} />
+    //       <Stack.Screen name="Lab5-1" component={Lab5_1} />
+    //       {/* <Stack.Screen name="Lab5-2" component={Lab5_2} /> */}
+    //     </Stack.Navigator>
+    //   </NavigationContainer>
+    //   {/* </PersistGate> */}
+    // </Provider>
     // <Studying />
 
-    // <RunAssigment />
+    <RunAssigment />
   );
 };
 

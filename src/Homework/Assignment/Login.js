@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -14,6 +14,31 @@ import Input from "./Components/Input";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login({ navigation }) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [accounts, setAccounts] = useState([
+    // Khởi tạo mảng với các tài khoản mẫu
+    { username: "admin123", password: "12345" },
+    { username: "user123", password: "abcde" },
+  ]);
+  // const {usernamelogin} = route.params;
+  // const {passwordlogin} = route.params;
+
+  const handleLogin = () => {
+    // Kiểm tra tài khoản đăng nhập có trong mảng không
+    const foundAccount = accounts.find(
+      (account) =>
+        account.username === username && account.password === password
+    );
+    if (foundAccount) {
+      // Thông báo đăng nhập thành công hoặc chuyển hướng đến trang chính
+      alert("Đăng nhập thành công");
+      navigation.navigate("HomePage");
+    } else {
+      // Thông báo đăng nhập thất bại
+      alert("Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.");
+    }
+  };
   return (
     <SafeAreaView style={{ flex: 1, padding: 20, justifyContent: "center" }}>
       <Image
@@ -61,8 +86,23 @@ export default function Login({ navigation }) {
           Đăng nhập tài khoản
         </Text>
       </View>
-      <Input placeholder="Username" />
-      <Input placeholder="Password" />
+      <TextInput
+        style={styles.input}
+        placeholder="Username"
+        onChangeText={(text) => setUsername(text)}
+        value={username}
+        underlineColorAndroid="transparent"
+        selectionColor="#818CF8"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        onChangeText={(text) => setPassword(text)}
+        secureTextEntry={true}
+        value={password}
+        underlineColorAndroid="transparent"
+        selectionColor="#818CF8"
+      />
       <TouchableOpacity
         style={{
           flexDirection: "row",
@@ -96,10 +136,7 @@ export default function Login({ navigation }) {
           justifyContent: "center",
           backgroundColor: "#9BCF53",
         }}
-        onPress={() => {
-          alert("Đăng nhập");
-          navigation.navigate("HomePage");
-        }}
+        onPress={handleLogin}
       >
         <Text
           style={{
@@ -171,5 +208,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginVertical: 10,
+    width: "100%",
+    borderRadius: 10,
+    borderColor: "green",
+    backgroundColor: "#EEEEEE",
   },
 });

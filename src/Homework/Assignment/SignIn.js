@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -14,6 +14,68 @@ import Input from "./Components/Input";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Login({ navigation }) {
+  const [username, setUsername] = useState("");
+  const [emailOrPhone, setEmailOrPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleSignup = () => {
+    // Kiểm tra các trường thông tin không được để trống
+    if (
+      !username.trim() ||
+      !emailOrPhone.trim() ||
+      !password.trim() ||
+      !confirmPassword.trim()
+    ) {
+      alert("Vui lòng điền đầy đủ thông tin.");
+      return;
+    }
+
+    // Kiểm tra tính hợp lệ của email hoặc số điện thoại
+    if (!isValidEmail(emailOrPhone) && !isValidPhoneNumber(emailOrPhone)) {
+      alert("Email hoặc số điện thoại không hợp lệ.");
+      return;
+    }
+
+    // Kiểm tra tính hợp lệ của mật khẩu
+    if (!isValidPassword(password)) {
+      alert("Mật khẩu phải chứa ít nhất 6 ký tự.");
+      return;
+    }
+
+    // Kiểm tra mật khẩu và mật khẩu xác nhận khớp nhau
+    if (password !== confirmPassword) {
+      alert("Mật khẩu và mật khẩu xác nhận không khớp.");
+      return;
+    }
+
+    // Thực hiện logic đăng ký tài khoản ở đây
+
+    // Sau khi đăng ký thành công, chuyển hướng đến trang đăng nhập
+
+    navigation.navigate("Login");
+  };
+
+  // Hàm kiểm tra tính hợp lệ của email
+  const isValidEmail = (email) => {
+    // Sử dụng biểu thức chính quy để kiểm tra tính hợp lệ của email
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
+  // Hàm kiểm tra tính hợp lệ của số điện thoại
+  const isValidPhoneNumber = (phoneNumber) => {
+    // Sử dụng biểu thức chính quy để kiểm tra tính hợp lệ của số điện thoại
+    const phonePattern = /^[0-9]{10}$/;
+    return phonePattern.test(phoneNumber);
+  };
+
+  // Hàm kiểm tra tính hợp lệ của mật khẩu
+  const isValidPassword = (password) => {
+    // Kiểm tra mật khẩu có ít nhất 6 ký tự
+    return password.length >= 6;
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, padding: 20, justifyContent: "center" }}>
       <Image
@@ -60,10 +122,40 @@ export default function Login({ navigation }) {
           Tạo tài khoản
         </Text>
       </View>
-      <Input placeholder="Username" />
-      <Input placeholder="Email or your phone number" />
-      <Input placeholder="Password" />
-      <Input placeholder="Password 2" />
+      <TextInput
+        style={styles.input}
+        placeholder="Username"
+        onChangeText={(text) => setUsername(text)}
+        value={username}
+        underlineColorAndroid="transparent"
+        selectionColor="#818CF8"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Email or your phone number"
+        onChangeText={(text) => setEmailOrPhone(text)}
+        value={emailOrPhone}
+        underlineColorAndroid="transparent"
+        selectionColor="#818CF8"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password"
+        onChangeText={(text) => setPassword(text)}
+        secureTextEntry={true}
+        value={password}
+        underlineColorAndroid="transparent"
+        selectionColor="#818CF8"
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Password 2"
+        onChangeText={(text) => setConfirmPassword(text)}
+        secureTextEntry={true}
+        value={confirmPassword}
+        underlineColorAndroid="transparent"
+        selectionColor="#818CF8"
+      />
       <TouchableOpacity
         style={{
           flexDirection: "row",
@@ -96,10 +188,7 @@ export default function Login({ navigation }) {
           justifyContent: "center",
           backgroundColor: "#9BCF53",
         }}
-        onPress={() => {
-          alert("Đăng nhập");
-          navigation.navigate("Login");
-        }}
+        onPress={handleSignup}
       >
         <Text
           style={{
@@ -171,5 +260,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  input: {
+    borderWidth: 1,
+    padding: 10,
+    marginVertical: 10,
+    width: "100%",
+    borderRadius: 10,
+    borderColor: "green",
+    backgroundColor: "#EEEEEE",
   },
 });

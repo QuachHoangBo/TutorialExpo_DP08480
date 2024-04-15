@@ -6,6 +6,8 @@ import Input from "./Components/Input";
 import Login from "./Login";
 import SignIn from "./SignIn";
 import HomePage from "./HomePage";
+import Search from "./Notification";
+import User from "./User";
 
 const Stack = createStackNavigator();
 const Main = () => {
@@ -25,6 +27,16 @@ const Main = () => {
         <Stack.Screen
           name="HomePage"
           component={HomePage}
+          // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={Search}
+          // options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="User"
+          component={User}
           // options={{ headerShown: false }}
         />
       </Stack.Navigator>
